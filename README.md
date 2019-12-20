@@ -9,7 +9,7 @@
 ### Association	
 - has_many chats	
 - has_many groups_users	
-- has_many groups throuth groups_users	
+- has_many groups, throuth: :groups_users	
 
 
 ## groups_usersテーブル	
@@ -20,7 +20,7 @@
 
 
 ### Association	
-- belongs_to :groups
+- belongs_to :group
 - belongs_to :user	
 
 
@@ -28,7 +28,7 @@
 ## groupsテーブル	
 |Column|Type|Options|	
 |------|----|-------|	
-|groups|string|null: false|
+|name|string|null: false|
 
 
 
@@ -42,6 +42,7 @@
 |Column|Type|Options|	
 |------|----|-------|	
 |text|text|
+|image|string|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
