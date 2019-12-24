@@ -171,18 +171,29 @@ li {
   }
 
 
-    .footer {
+    .groups {
       background-color: #2f3e51;
       height: calc(100vh - 100px);
       width: 300px;
       padding: 20px;
-
+      text-decoration: none;
 
       .group {
         text-decoration: none;
         margin-bottom: 40px;
-        color: white;
+
+        .group-text {
+          text-decoration: none;
+        
+          .group-text__name {
+            color: white;
+            text-decoration: none;
+          }
+          .group-text__message {
+            color: white;
+            text-decoration: none;
+          }
+        }
       }
     }
-  
   }
