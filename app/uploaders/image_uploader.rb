@@ -1,6 +1,3 @@
-include CarrierWave::MiniMagick
-
-process resize_to_fit: [800, 800]
 
 class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
@@ -48,4 +45,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
+  include CarrierWave::MiniMagick
+
+  process resize_to_fit: [800, 800]
 end

@@ -1,9 +1,12 @@
 .contexts
+  = render @messages
   .top
     %p.top__text
-      test
+      = @group.name
       %a.top__test__member
-        member test
+        = "member ;"
+        -@group.users.each do |user|
+          ="#{user.name}"
     = link_to "#" ,class: "tops" do
       %p.tops__edit
         edit
@@ -16,10 +19,10 @@
     %p.bottom__message
       kk
   .under
-    %under.new_message
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'new_message', placeholder: 'type a message'
       .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
-          =icon("fas", "image")
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type:"submit", class:"submit-btn"}
+        = f.label :image, class: 'input-box__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
