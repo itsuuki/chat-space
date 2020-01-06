@@ -12,12 +12,6 @@
   .line
   .bottom
     = render @messages
-    -# %p.bottom__text
-    -#   test
-    -#   %a.bottom__text__time
-    -#     2019/12/22
-    -# %p.bottom__message
-    -#   kk
   .under
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'new_message', placeholder: 'type a message'

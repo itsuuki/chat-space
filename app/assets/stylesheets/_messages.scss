@@ -84,8 +84,6 @@
 
       .new_message {
         display: flex;
-        // padding-top: 25px;
-        // padding-left: 50px;
         width: 100%;
         position: relative;
         height: 50px;
@@ -97,25 +95,13 @@
 
 
         .input-box {
-          // width: 100%;
-          // display: flex;
-          // position: relative;
-          // position: absolute;
           border-style: none;
           height: 50px;
-          // width: 100%;
           color: #434a54;
-          // border-style: none;
           padding: 0 40px 0 10px;
          
           &__image {
-            // height: 50px;
-            // // width: 100%;
-            // color: #434a54;
-            // // border-style: none;
-            // padding: 0 40px 0 10px;
-            // position: relative;
-
+            
             .icon {
               position: absolute;
               cursor: pointer;
@@ -130,16 +116,6 @@
             .hidden {
               display: none;
             }
-            
-          
-          
-
-            // height: 50px;
-            // width: 100%;
-            // color: #434a54;
-            // border-style: none;
-            // padding: 0 40px 0 10px;
-
             
           }
         }
