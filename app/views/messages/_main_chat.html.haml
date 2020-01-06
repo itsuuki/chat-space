@@ -1,5 +1,4 @@
 .contexts
-  = render @messages
   .top
     %p.top__text
       = @group.name
@@ -12,17 +11,17 @@
         edit
   .line
   .bottom
-    %p.bottom__text
-      test
-      %a.bottom__text__time
-        2019/12/22
-    %p.bottom__message
-      kk
+    = render @messages
+    -# %p.bottom__text
+    -#   test
+    -#   %a.bottom__text__time
+    -#     2019/12/22
+    -# %p.bottom__message
+    -#   kk
   .under
     = form_for [@group, @message] do |f|
       = f.text_field :content, class: 'new_message', placeholder: 'type a message'
-      .input-box
-        = f.label :image, class: 'input-box__image' do
-          = icon('fas', 'image', class: 'icon')
-          = f.file_field :image, class: 'hidden'
+      = f.label :image, class: 'input-box__image' do
+        = icon('fas', 'image', class: 'icon')
+        = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'form__submit'
