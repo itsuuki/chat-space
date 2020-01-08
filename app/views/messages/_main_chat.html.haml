@@ -6,9 +6,8 @@
         = "member ;"
         -@group.users.each do |user|
           ="#{user.name}"
-    = link_to "#" ,class: "tops" do
-      %p.tops__edit
-        edit
+    = link_to "Edit", edit_group_path(@group.id), class: "tops"
+        
   .line
   .bottom
     = render @messages
@@ -19,3 +18,5 @@
         = icon('fas', 'image', class: 'icon')
         = f.file_field :image, class: 'hidden'
       = f.submit 'Send', class: 'form__submit'
+
+
