@@ -2,19 +2,20 @@ $(function(){
   function buildHTML(message){
     if (message.content && message.image) {
       var html = 
-      `<div class="message" data-message-id=${message.id}>
+      `<div class="message" data-message-id="${message.id}">
         <div class="upper-message">
-        <div class="upper-message__user-name">
-          ${message.user_name}
+          <div class="upper-message__user-name">
+            ${message.user_name}
+          </div>
+          <div class="upper-message__date">
+            ${message.created_at}
+          </div>
         </div>
-        <div class="upper-message__date">
-          ${message.created_at}
-        </div>
-      </div>
         <div class="lower-message">
           <p class="lower-message__content">
-          <img class="lower-message__image" src="${message.content}">
+          ${message.content}
           </p>
+          <img class="lower-message__image" src="${message.image}">
         </div>
       </div>`
     } else if (message.image) {
@@ -87,9 +88,9 @@ $(function(){
     })
     .done(function(messages) {
       if (messages.length !== 0) {
-      var insertHTML = '';
-      $.each(messages, function(i, message) {
-        insertHTML += buildHTML(message)
+        var insertHTML = '';
+        $.each(messages, function(i, message) {
+          insertHTML += buildHTML(message)
       });
       $('.bottom').append(insertHTML);
       $('.bottom').animate({ scrollTop: $('.bottom')[0].scrollHeight});
