@@ -1,7 +1,7 @@
 .contexts
   .top
     %p.top__text
-      = @group.name
+      = @group.name 
       %a.top__test__member
         = "member ;"
         -@group.users.each do |user|
@@ -9,7 +9,7 @@
     = link_to "Edit", edit_group_path(@group.id), class: "tops"
         
   .line
-  .bottom
+  .messages
     = render @messages
   .under
     = form_for [@group, @message] do |f|

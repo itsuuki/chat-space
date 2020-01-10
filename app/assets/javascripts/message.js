@@ -65,16 +65,19 @@ $(function(){
       processData: false,
       contentType: false
     })
-    .done(function(data){
+    .done(function(formData){
+      console.log("oK")
       var html = buildHTML(data);
-      $(".bottom").append(html);
-      $('.bottom').animate({ scrollTop: $('.bottom')[0].scrollHeight});
+      $(".messages").append(html);
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       $('form')[0].reset();
       $('.form__submit').prop('disabled', false);
     })
     .fail(function() {
+      
       alert("メッセージ送信に失敗しました");
-  });
+      $(".submit_btn").prop("disabled", false);
+  })
   })
 
   
@@ -92,8 +95,8 @@ $(function(){
         $.each(messages, function(i, message) {
           insertHTML += buildHTML(message)
       });
-      $('.bottom').append(insertHTML);
-      $('.bottom').animate({ scrollTop: $('.bottom')[0].scrollHeight});
+      $('.messages').append(insertHTML);
+      $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
       $("#new_message")[0].reset();
       $(".form__submit").prop("disabled", false);
         }
